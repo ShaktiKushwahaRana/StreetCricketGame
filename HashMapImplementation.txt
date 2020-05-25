@@ -1,0 +1,42 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+/*
+    Author:Shakti Kushwaha rana
+    Subject:HashMap Implementation
+    Project:find repetited elemts in a string.
+
+
+*/
+
+
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    String s="My name is rana shakti";
+	    char c[]=s.toCharArray();
+	    Map<Character,Integer> m=new HashMap<>();
+	    for(char n:c)
+	    {
+	        if(m.containsKey(n))
+	        {   m.put(n,m.get(n)+1);
+	            
+	        }
+	        else
+	        {
+	            m.put(n,1);
+	        }
+	    }
+	    Set<Map.Entry<Character,Integer>>b=m.entrySet();
+	    for(Map.Entry<Character,Integer> v:b)
+	    {
+	        if(v.getValue()>1)
+	        System.out.println(v.getKey()+":"+v.getValue());
+	    }
+	}
+}
